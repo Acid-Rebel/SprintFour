@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 env_path = Path(__file__).resolve().parent.parent / ".env"
 load_dotenv(env_path)
 
-GROQ_API_KEY = os.getenv("Groq", "")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY") or os.getenv("Groq", "")
 GROQ_MODEL = "llama-3.3-70b-versatile"
 HOST = "0.0.0.0"
 PORT = 8000
