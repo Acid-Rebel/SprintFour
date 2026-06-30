@@ -1,0 +1,96 @@
+.pdf-visual-viewer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #e9ecef;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  overflow: auto;
+  min-height: 500px;
+}
+
+.pdf-toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  background: white;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  align-items: center;
+}
+
+.pdf-toolbar button {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pdf-document-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+}
+
+.pdf-page-wrapper {
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  background: white;
+}
+
+.pdf-overlays {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Let clicks pass through except on boxes */
+  z-index: 5;
+}
+
+.pdf-redaction-box {
+  position: absolute;
+  border: 2px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  pointer-events: auto; /* Catch clicks */
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible; /* Let the label overflow if needed */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.pdf-redaction-box:hover {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+  z-index: 10;
+}
+
+.pdf-redaction-box.selected {
+  outline: 3px solid var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-glow);
+  z-index: 20;
+}
+
+.pdf-redaction-box.low-conf {
+  border-style: dashed;
+}
+
+.pdf-redaction-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: inherit; /* inherit the pill background */
+  padding: 0 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
