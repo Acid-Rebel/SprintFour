@@ -10,4 +10,4 @@ GROQ_API_KEY = os.getenv("Groq", "")
 GROQ_MODEL = "llama-3.3-70b-versatile"
 HOST = "0.0.0.0"
 PORT = 8000
-CORS_ORIGINS = ["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173"]
+CORS_ORIGINS = ["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173", "https://acid-rebel.github.io"]
