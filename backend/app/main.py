@@ -30,3 +30,8 @@ app.include_router(export_router)
 @app.get("/health")
 async def health():
     return {"status": "ok"}
+
+
+@app.get("/ping")
+async def ping():
+    return {"message": "pong"}
